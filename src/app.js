@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   getGitHubApiUrl (username, type) {
-    const internalUser = username ? `/${username}` : ''
+    const internalUser = username ? `/${username.replace(/\s/g, '')}` : ''
     const internalType = type ? `/${type}` : ''
     return `https://api.github.com/users${internalUser}${internalType}`
   }
